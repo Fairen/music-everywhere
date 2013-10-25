@@ -1,5 +1,6 @@
 # MusicEverywhere
 
+The purpose of this project is to provide a structure for listening music and watching videos through a web interface.
 
 ## Requirements
 
