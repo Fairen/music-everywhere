@@ -14,14 +14,14 @@ Compass
 
 ## Install
 
-To deploy the project and install all the dependencies, clone the repository from bitbucket (see git commands below) and run 
+To deploy the project and install all the dependencies, clone the repository from github (see git commands below) and run 
 ```sh
 sudo sh Install.sh
 ```
 
 ```sh
 #Git
-git clone https://fairen@bitbucket.org/fairen/music-is-everywhere.git     # clone repository
+git clone https://github.com/Fairen/music-everywhere.git     # clone repository
 git add/remove <filename>                         # add/delete files
 git commit -m "message"                           # commit
 git push -u origin master                         # push commit on repository
