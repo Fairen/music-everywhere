@@ -1,0 +1,32 @@
+<div class="hero-unit">
+  <ul class="breadcrumb no-background border border-white">
+    <li ng-repeat="dir in current_dir"><a ng-click="updatePath($index)" class="white white-on-hover cursor-pointer no-text-shadow">{{dir.url}}</a></li>
+  </ul>
+	<table class="table table-hover">
+      <thead>
+        <tr>
+          <th><i ng-class="orderByIcon()" ng-click="changeOrder()" class="cursor-pointer"></i></th>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cursor-pointer" ng-repeat="file in current_files | filter:search | orderBy:orderby" ng-click="openFile(file)" bgblur>
+          <td><i ng-class="isDirectory(file)" ng-hide="currentlyPlay(file)"/></i><img ng-show="currentlyPlay(file)" src="images/play.gif"/></td>
+          <td>{{file.name}}</td>
+          <td><i class="orange-on-hover" ng-class="showControl(file)" ng-hide="file.isDirectory"></i></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<div style="
+    -webkit-filter: blur(10px);   filter: blur(10px);
+    width: 940px;
+    position: fixed;
+    margin: auto;
+    top: 60px;
+    z-index: -1;
+    background: url('../images/bg.jpg') no-repeat center center fixed !important;
+" id="background-blur"></div>

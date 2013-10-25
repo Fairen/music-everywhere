@@ -1,0 +1,103 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"  ng-app="MusicIsEverywhereApp"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MusicEverywhere</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/main.css">
+
+        <!-- build:js scripts/modules.js -->
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"></link>
+        <link rel="stylesheet" href="bower_components/bootstrap-sass/bootstrap-responsive-2.3.2.min.css"></link>
+        <link rel="stylesheet" href="bower_components/bootstrap-sass/bootstrap-2.3.2.min.css"></link>
+        <!-- endbuild -->
+
+        <!-- build:css(.tmp) styles/main.css -->
+        <!-- endbuild -->
+
+
+</head>
+  <body ng-controller="IndexCtrl"> 
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+
+    <div class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container-fluid" style="padding: 0 20px;">
+          <a class="brand orange font-bold">Music Everywhere</a>
+          <ul class="nav">
+            <li ng-class="current_menu.home"><a href="#/home" ><i class="icon-dashboard"></i> Home</a></li>
+            <li ng-class="current_menu.music"><a href="#/music"><i class="icon-music"></i> Music</a></li>
+            <li ng-class="current_menu.video"><a href="#/home"><i class="icon-film"></i> Video</a></li>
+          </ul>
+
+          <form class='form-search  pull-right search'>
+            <div class="input-append">
+                <input class="span2 search-query" id="appendedInputButton" ng-model="search" type="text">
+                <button class="btn btn-inverse" type="submit"><i class="icon-search"></i></button>
+            </div>
+          </form>
+
+
+          <audio audioended id="audio_player" controls="controls" class="pull-right" autoplay>
+            <source src="" type="audio/mpeg">Your browser does not support the audio element.
+          </audio>
+
+          <ul class="nav pull-right ">
+            <li><a class="orange">{{player.current_music.name.substring(0,38)+'...'}}</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <!-- Add your site or application content here -->
+    <div class="container" ng-view=""></div>
+
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+
+        <!-- build:js scripts/plugins.js 
+        <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
+         endbuild -->
+
+        <!-- build:js scripts/modules.js -->
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/directives/directives.js"></script> 
+        <script src="scripts/controllers/index.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/home.js"></script>
+        <script src="scripts/controllers/music.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

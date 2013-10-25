@@ -1,0 +1,31 @@
+<div class="container" id="login">
+    <form ng-submit="submit()" method="post">
+        <input type="text" ng-model="username" name="username" class="username" placeholder="Username">
+        <input type="password" ng-model="password" name="password" class="password" placeholder="Password">
+        <button type="submit">Sign me in</button>
+    </form>
+</div>
+<div style="
+-webkit-filter: blur(10px);
+width: 342px;
+z-index: -1;
+background-image: url(http://172.20.0.140:9000/images/bg.jpg) !important;
+background-attachment: fixed !important;
+height: 272px;
+background-position: 50% 50% !important;
+background-repeat: no-repeat no-repeat !important;" id="background-login-blur"></div>
+<script>
+	$(window).resize(function() {
+	    $('#login').css({
+	        position: 'absolute',
+	        left: ($(window).width() - $('#login').outerWidth()) / 2,
+	        top: ($(window).height() - $('#login').outerHeight()) / 2
+	    });
+	    $('#background-login-blur').css({
+	        position: 'absolute',
+	        left: ($(window).width() - $('#login').outerWidth()) / 2,
+	        top: ($(window).height() - $('#login').outerHeight()) / 2
+	    });
+	});
+	$(window).resize();
+</script>
